@@ -8,4 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Color extends Model
 {
     use HasFactory;
+    public function voitures(){
+        return $this->hasMany(Membre::class);
+    }
 }

@@ -18,8 +18,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    $DBVoiture = new Voiture;
-    $DBColor = new Color;
+    $DBVoiture = Voiture::all();
+    $DBColor = Color::all();
     return  view ("welcome", compact("DBVoiture", "DBColor"));
 });
 Route::resource('voitures', VoitureController::class);

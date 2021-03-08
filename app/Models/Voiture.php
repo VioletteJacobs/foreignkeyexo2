@@ -8,4 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Voiture extends Model
 {
     use HasFactory;
+    public function colors(){
+        return $this->belongsTo(Color::class, "colors_id");
+    }
 }

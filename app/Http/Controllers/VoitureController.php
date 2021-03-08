@@ -35,7 +35,12 @@ class VoitureController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $store= new Voiture;
+        $store->marque = $request->marque;
+        $store->construction = $request->construction;
+        $store->color_id = $request->color_id;
+        $store->save();
+        return redirect()->back();
     }
 
     /**
