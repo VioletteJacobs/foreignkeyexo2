@@ -9,6 +9,6 @@ class Voiture extends Model
 {
     use HasFactory;
     public function colors(){
-        return $this->belongsTo(Color::class, "colors_id");
+        return $this->belongsTo(Color::class, "color_id");
     }
 }

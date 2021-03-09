@@ -35,6 +35,10 @@ class ColorController extends Controller
      */
     public function store(Request $request)
     {
+        $validation = $request->validate([
+            "color" => "required|min:2|max:20",
+        ]);
+
         $store = New Color;
         $store->color  = $request->color;
         $store->save();

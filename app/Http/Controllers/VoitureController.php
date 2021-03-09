@@ -35,6 +35,12 @@ class VoitureController extends Controller
      */
     public function store(Request $request)
     {
+        $validation = $request->validate([
+            "marque" =>"required|min:5|max:50",
+            "construction" => "required|min:2|max:10",
+            "color_id" => "required|min:1|max:5",
+        ]);
+
         $store= new Voiture;
         $store->marque = $request->marque;
         $store->construction = $request->construction;
